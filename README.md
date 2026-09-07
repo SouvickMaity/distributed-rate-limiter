@@ -822,6 +822,3 @@ Jedis
 
 ---
 
-## ⭐ If you find this project useful
-
-Consider giving the repository a ⭐ on GitHub.
