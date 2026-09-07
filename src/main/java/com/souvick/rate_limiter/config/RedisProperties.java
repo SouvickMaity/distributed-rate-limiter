@@ -25,7 +25,7 @@ public class RedisProperties {
          poolConfig.setMaxTotal(300);      // was 50
     poolConfig.setMaxIdle(100);       // was 10
     poolConfig.setMinIdle(20);        // was 5
-    poolConfig.setTestOnBorrow(false); // was true — remove for perf test
+    poolConfig.setTestOnBorrow(false); // was true 
     poolConfig.setTestOnReturn(false); // was true
     poolConfig.setBlockWhenExhausted(true);
     poolConfig.setMaxWaitMillis(1000);
