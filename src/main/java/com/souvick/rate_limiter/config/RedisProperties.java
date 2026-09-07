@@ -22,12 +22,14 @@ public class RedisProperties {
     @Bean
     public JedisPool getJedisPool(){
         JedisPoolConfig poolConfig = new JedisPoolConfig();
-        poolConfig.setMaxTotal(50);
-        poolConfig.setMaxIdle(10);
-        poolConfig.setMinIdle(5);
-        poolConfig.setTestOnBorrow(true);
-        poolConfig.setTestOnReturn(true);
-        return new JedisPool(poolConfig,host,port,timeout);
+         poolConfig.setMaxTotal(300);      // was 50
+    poolConfig.setMaxIdle(100);       // was 10
+    poolConfig.setMinIdle(20);        // was 5
+    poolConfig.setTestOnBorrow(false); // was true — remove for perf test
+    poolConfig.setTestOnReturn(false); // was true
+    poolConfig.setBlockWhenExhausted(true);
+    poolConfig.setMaxWaitMillis(1000);
+    return new JedisPool(poolConfig, host, port, timeout);
     }
 }
 
